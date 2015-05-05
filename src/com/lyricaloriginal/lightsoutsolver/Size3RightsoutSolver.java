@@ -1,9 +1,21 @@
 package com.lyricaloriginal.lightsoutsolver;
 
+/**
+ * 3x3のライツアウトのソルバーです。
+ * 
+ * @author LyricalMaestro
+ *
+ */
 class Size3RightsoutSolver extends RightsOutSolver{
 
 	private final int[] _p;
 	
+	/**
+	 * コンストラクタ
+	 * 
+	 * @param panels
+	 * 			ライトの初期状態を示す配列
+	 */
 	Size3RightsoutSolver(int[] panels) {
 		_p = panels;
 	}

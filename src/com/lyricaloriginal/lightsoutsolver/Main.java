@@ -2,9 +2,10 @@ package com.lyricaloriginal.lightsoutsolver;
 
 public class Main {
 
+	//	ライツアウトのサイズ。
 	private static final int SIZE = 3;
-//	private static final int[] PANELS = new int[]{0, 1, 0, 0, 1, 0, 0, 1, 0};
-	private static final int[] PANELS = new int[]{1, 0, 0, 0, 0, 0, 0, 0, 0};
+	//	ライトのon/offの初期状態。
+	private static final int[] PANELS = new int[]{0, 1, 0, 0, 1, 0, 0, 1, 0};
 	
 	public static void main(String[] args) {
 		solve(SIZE, PANELS);
@@ -14,7 +15,7 @@ public class Main {
 		
 		System.out.println("---  Input  ---");
 		System.out.println("Size = " + size);
-		System.out.println("panels ");
+		System.out.println("ライトの初期状態 ");
 		System.out.println("    ");
 		for(int i = 0; i < size; i++){
 			StringBuilder sb = new StringBuilder();
