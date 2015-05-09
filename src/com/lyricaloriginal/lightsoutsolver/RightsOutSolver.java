@@ -4,27 +4,42 @@ package com.lyricaloriginal.lightsoutsolver;
  * ライツアウトのソルバーです。
  * 
  * @author LyricalMaestro
- *
+ * 
  */
 public abstract class RightsOutSolver {
 
 	/**
 	 * ライツアウトを解きます。
+	 * 
 	 * @param size
-	 * 			ライツアウトのサイズ
+	 *            ライツアウトのサイズ
 	 * @param panels
-	 * 			ライトの初期状態を示す配列
+	 *            ライトの初期状態を示す配列
 	 * @return 捜査すべき場所と回数を示す配列
 	 */
-	public static int[] solve(int size, int[] panels){
-		if(size == 3){
+	public static int[] solve(int size, int[] panels) {
+		if (size == 3) {
 			Size3RightsoutSolver solver = new Size3RightsoutSolver(panels);
 			return solver.solve();
+		} else if(size == 4){
+			Size4RightsoutSolver solver = new Size4RightsoutSolver(panels);
+			if(solver.solvable()){
+				return solver.solve();
+			}else{
+				return null;
+			}
 		}else{
 			throw new RuntimeException("Not Implemented for size = " + size);
 		}
 	}
-	
+
+	/**
+	 * ライツアウトが解けるかどうか判定します。
+	 * 
+	 * @return true:解ける, false:解けない
+	 */
+	protected abstract boolean solvable();
+
 	/**
 	 * ライツアウトを解きます。
 	 * 

@@ -9,6 +9,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		solve(SIZE, PANELS);
+//		solve(4, new int[]{0, 1, 1, 1, 1, 0, 1,0, 1, 1, 0, 0, 1, 0, 0, 0});
 	}
 	
 	private static void solve(int size, int[] panels){
@@ -30,6 +31,11 @@ public class Main {
 		int[] answer = RightsOutSolver.solve(size, panels);
 		
 		System.out.println("---  Output  ---");
+		if(answer == null){
+			System.out.println("このライツアウトは解くことができません。");
+			return;
+		}
+		
 		System.out.println("タップすべき場所と回数 ");
 		System.out.println("    ");
 		for(int i = 0; i < size; i++){
