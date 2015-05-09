@@ -13,11 +13,11 @@ public class Size4RightsoutSolver extends RightsOutSolver {
 	/**
 	 * コンストラクタ
 	 * 
-	 * @param panels
+	 * @param lights
 	 *            ライトの初期状態を示す配列
 	 */
-	Size4RightsoutSolver(int[] panels) {
-		_p = panels;
+	Size4RightsoutSolver(int[] lights) {
+		_p = lights;
 	}
 
 	@Override

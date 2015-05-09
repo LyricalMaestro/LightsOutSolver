@@ -13,16 +13,16 @@ public abstract class RightsOutSolver {
 	 * 
 	 * @param size
 	 *            ライツアウトのサイズ
-	 * @param panels
+	 * @param lights
 	 *            ライトの初期状態を示す配列
 	 * @return 捜査すべき場所と回数を示す配列
 	 */
-	public static int[] solve(int size, int[] panels) {
+	public static int[] solve(int size, int[] lights) {
 		if (size == 3) {
-			Size3RightsoutSolver solver = new Size3RightsoutSolver(panels);
+			Size3RightsoutSolver solver = new Size3RightsoutSolver(lights);
 			return solver.solve();
 		} else if(size == 4){
-			Size4RightsoutSolver solver = new Size4RightsoutSolver(panels);
+			Size4RightsoutSolver solver = new Size4RightsoutSolver(lights);
 			if(solver.solvable()){
 				return solver.solve();
 			}else{
