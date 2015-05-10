@@ -17,11 +17,12 @@ public class Main {
 	public static void main(String[] args) {
 		if (args.length == 0) {
 			System.out.println("起動時引数を指定しなかったので、デフォルトの値を使用します。");
-			solve(SIZE, LIGHTS);
+			solve(SIZE, LIGHTS, false);
 		} else {
 			int size = getSize(args);
 			int[] lights = getLights(args, size);
-			solve(size, lights);
+			boolean needMinTapPattern = getMinTapPattern(args);
+			solve(size, lights, needMinTapPattern);
 		}
 	}
 
@@ -53,7 +54,7 @@ public class Main {
 		}
 		String[] vals = matArray.split(",");
 		if (vals.length != size * size) {
-			System.out.println("値は" + (size * size)+ "個指定してください。");
+			System.out.println("値は" + (size * size) + "個指定してください。");
 			System.exit(-1);
 		}
 		int[] lights = new int[size * size];
@@ -72,6 +73,21 @@ public class Main {
 		}
 		return lights;
 	}
+	
+	private static boolean getMinTapPattern(String[] args) {
+		if(args == null || args.length == 0){
+			return false;
+		}
+		
+		boolean res = false;
+		String val = getValue(args, "-min");
+		if(val.length() == 0){
+			return res;
+		}
+		res = Boolean.parseBoolean(val);
+		return res;
+	}
+
 
 	private static String getValue(String[] args, String optionKey) {
 		for (int i = 0; i < args.length - 1; i++) {
@@ -82,10 +98,11 @@ public class Main {
 		return "";
 	}
 
-	private static void solve(int size, int[] lights) {
+	private static void solve(int size, int[] lights, boolean needMinTapPattern) {
 
 		System.out.println("---  Input  ---");
 		System.out.println("Size = " + size);
+		System.out.println("最小のタップ数でクリアできるパターンを求める = " + needMinTapPattern);
 		System.out.println("ライトの初期状態 ");
 		System.out.println("■ : ON,  □ : OFF ");
 		System.out.println("    ");
@@ -99,7 +116,7 @@ public class Main {
 		}
 		System.out.println("");
 
-		int[] answer = RightsOutSolver.solve(size, lights);
+		int[] answer = RightsOutSolver.solve(size, lights, true);
 
 		System.out.println("---  Output  ---");
 		if (answer == null) {
