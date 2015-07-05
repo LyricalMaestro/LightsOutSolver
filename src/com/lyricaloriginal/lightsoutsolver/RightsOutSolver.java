@@ -21,6 +21,20 @@ public abstract class RightsOutSolver {
 	 */
 	public static int[] solve(int size, int[] lights,
 			boolean needMinimumTapPattern) {
+		if(2 <= size){
+			SizeNRightsoutSolver solver 
+				= new SizeNRightsoutSolver(size, lights, needMinimumTapPattern);
+			if (solver.solvable()) {
+				return solver.solve();
+			} else {
+				return null;
+			}
+		}else {
+			throw new RuntimeException("Not Implemented for size = " + size);
+		}
+
+		/*
+		 * 初代ソルバーの名残
 		if (size == 3) {
 			Size3RightsoutSolver solver = new Size3RightsoutSolver(lights);
 			return solver.solve();
@@ -32,9 +46,7 @@ public abstract class RightsOutSolver {
 			} else {
 				return null;
 			}
-		} else {
-			throw new RuntimeException("Not Implemented for size = " + size);
-		}
+		} */
 	}
 
 	/**
