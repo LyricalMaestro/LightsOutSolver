@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.lyricaloriginal.f2matrixanalyzer.Analyzer;
 import com.lyricaloriginal.f2matrixanalyzer.Report;
+import com.lyricaloriginal.f2matrixanalyzer.Utils;
 
 /**
  * nxn(2<=n)のライツアウトのソルバーです。<BR>
@@ -32,7 +33,7 @@ public class SizeNRightsoutSolver extends RightsOutSolver{
 	 *            最小タップ数でクリアできるような回答を求めるか。
 	 */
 	SizeNRightsoutSolver(int n, int[] lights, boolean needMinimumTapPattern) {
-		_lightsOutMatrix = makeLightsOutMatrix(n);
+		_lightsOutMatrix = LightsOutMatrixGenerator.generate(n);
 		_p = lights;
 		_needMinimumTapPattern = needMinimumTapPattern;
 
@@ -45,13 +46,14 @@ public class SizeNRightsoutSolver extends RightsOutSolver{
 
 	@Override
 	protected boolean solvable() {
+		int v = 0;
 		int n = _generalizedMatrix.length;
 		for(int i = n - _kernelDim; i < n; i++){
 			for(int j = 0; j < n; j++){
-				int v = _generalizedMatrix[i][j] * _p[j];
-				if(v % 2 != 0){
-					return false;
-				}
+				v += _generalizedMatrix[i][j] * _p[j];
+			}
+			if(v % 2 != 0){
+				return false;
 			}
 		}
 		return true;
