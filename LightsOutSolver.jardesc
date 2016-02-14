@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="/Users/shinichitanimoto/Desktop/LightsOutSolver-1.0.0.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/LightsOutSolver/LightsOutSolver.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=LightsOutSolver/src&lt;com.lyricaloriginal.lightsoutsolver{LightsOutMatrixGenerator.java"/>
+        <javaElement handleIdentifier="=LightsOutSolver/src&lt;com.lyricaloriginal.lightsoutsolver{Size4RightsoutSolver.java"/>
+        <javaElement handleIdentifier="=LightsOutSolver/src&lt;com.lyricaloriginal.lightsoutsolver{Size3RightsoutSolver.java"/>
+        <javaElement handleIdentifier="=LightsOutSolver/src&lt;com.lyricaloriginal.lightsoutsolver{VectorSetGenerator.java"/>
+        <javaElement handleIdentifier="=LightsOutSolver/src&lt;com.lyricaloriginal.lightsoutsolver{SizeNRightsoutSolver.java"/>
+        <javaElement handleIdentifier="=LightsOutSolver/src&lt;com.lyricaloriginal.lightsoutsolver{RightsOutSolver.java"/>
+    </selectedElements>
+</jardesc>
