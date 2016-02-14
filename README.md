@@ -63,6 +63,7 @@ int[] answer = RightsOutSolver.solve(size, lights, true); // 最小タップ数�
 ```
 
 上記ライツアウトの場合、クリアするためにタップすべきライトは以下の通りである。
+
 □ □ ■<BR>
 □ ■ □<BR>
 □ ■ □<BR>
